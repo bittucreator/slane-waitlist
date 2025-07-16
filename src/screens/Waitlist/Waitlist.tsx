@@ -149,10 +149,10 @@ export const Waitlist = (): JSX.Element => {
                   <img className="w-10 h-10" alt="Slane logo" src="/Slane.png" />
 
                   <div className="flex flex-col w-full items-center gap-[7px]">
-                    <h1 className="font-medium text-black text-lg text-center [font-family:'Space_Grotesk',Helvetica] w-full">
+                    <h1 className="font-medium text-black text-lg text-center [font-family:'Inter',Helvetica] w-full">
                       Slane
                     </h1>
-                    <p className="font-normal text-[#00000080] text-[13px] text-center [font-family:'Space_Grotesk',Helvetica] w-full">
+                    <p className="font-normal text-[#00000080] text-[13px] text-center [font-family:'Inter',Helvetica] w-full">
                       a minimal to-do app for founders and designers
                     </p>
                   </div>
@@ -160,21 +160,21 @@ export const Waitlist = (): JSX.Element => {
 
                 <div className="flex flex-col items-start gap-4 w-full">
                   <Input
-                    className="h-[41px] bg-[#f4f4f4] text-xs text-[#00000080] [font-family:'Space_Grotesk',Helvetica] font-normal rounded-none shadow-none border-none"
+                    className="h-[41px] bg-[#f4f4f4] text-xs text-black placeholder:text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
                     placeholder="your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
 
                   <Input
-                    className="h-[41px] bg-[#f4f4f4] text-xs text-[#00000080] [font-family:'Space_Grotesk',Helvetica] font-normal rounded-none shadow-none border-none"
+                    className="h-[41px] bg-[#f4f4f4] text-xs text-black placeholder:text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
                     placeholder="and email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
 
                   <Button 
-                    className="w-full h-10 bg-black text-white hover:bg-black/90 [font-family:'Space_Grotesk',Helvetica] font-medium rounded-none transition-all duration-200 ease-out hover:transform hover:scale-[0.98] active:scale-95"
+                    className="w-full h-10 bg-black text-white hover:bg-black/90 [font-family:'Inter',Helvetica] font-medium rounded-none transition-all duration-200 ease-out hover:transform hover:scale-[0.98] active:scale-95"
                     onClick={handleSubmit}
                     disabled={isSubmitting || !name.trim() || !email.trim()}
                   >
@@ -182,7 +182,7 @@ export const Waitlist = (): JSX.Element => {
                   </Button>
                   
                   {error && (
-                    <p className="text-red-500 text-xs text-center [font-family:'Space_Grotesk',Helvetica] w-full">
+                    <p className="text-red-500 text-xs text-center [font-family:'Inter',Helvetica] w-full">
                       {error}
                     </p>
                   )}
@@ -192,13 +192,19 @@ export const Waitlist = (): JSX.Element => {
                     {countLoading ? (
                       <div className="h-[18px] w-32 bg-gray-100 animate-pulse rounded"></div>
                     ) : countError ? (
-                      <p className="font-normal text-[#00000040] text-[11px] text-center [font-family:'Space_Grotesk',Helvetica] transition-all duration-500 ease-out">
+                      <p className="font-normal text-[#00000040] text-[11px] text-center [font-family:'Inter',Helvetica] transition-all duration-500 ease-out">
                         join the waitlist
                       </p>
                     ) : waitlistCount !== null ? (
-                      <p className="font-normal text-[#000000] text-[11px] text-center [font-family:'Space_Grotesk',Helvetica] transition-all duration-500 ease-out">
-                        {waitlistCount} cool {waitlistCount === 1 ? 'person' : 'folks'} already joined!
-                      </p>
+                      <div className="flex items-center justify-center gap-1.5">
+                        <div className="relative">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                          <div className="absolute inset-0 w-1.5 h-1.5 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                        </div>
+                        <p className="font-normal text-[#000000] text-[11px] text-center [font-family:'Inter',Helvetica] transition-all duration-500 ease-out">
+                          {waitlistCount} cool {waitlistCount === 1 ? 'person' : 'folks'} already joined!
+                        </p>
+                      </div>
                     ) : null}
                   </div>
                 </div>
@@ -210,14 +216,14 @@ export const Waitlist = (): JSX.Element => {
                 <img className="w-10 h-10" alt="Slane logo" src="/Slane.png" />
                 
                 <div className="flex flex-col w-full items-center gap-[7px]">
-                  <h1 className="font-medium text-black text-lg text-center [font-family:'Space_Grotesk',Helvetica] w-full min-h-[28px]">
+                  <h1 className="font-medium text-black text-lg text-center [font-family:'Inter',Helvetica] w-full min-h-[28px]">
                     {displayedText}
                     <span className="animate-pulse">|</span>
                   </h1>
-                  <p className={`font-normal text-[#00000080] text-[13px] text-center [font-family:'Space_Grotesk',Helvetica] w-full transition-all duration-300 ease-out ${
+                  <p className={`font-normal text-[#00000080] text-[13px] text-center [font-family:'Inter',Helvetica] w-full transition-all duration-300 ease-out ${
                     showSubtext ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'
                   }`}>
-                    We'll notify you when Slane is ready
+                    We'll notify you when Slane is live
                   </p>
                 </div>
                 
@@ -225,7 +231,7 @@ export const Waitlist = (): JSX.Element => {
                   showSubtext ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
                 }`}>
                   <Button 
-                    className="w-full h-10 bg-transparent text-black hover:bg-gray-50 border border-gray-200 [font-family:'Space_Grotesk',Helvetica] font-medium rounded-none transition-all duration-200 ease-out hover:transform hover:scale-[0.98] active:scale-95 shadow-none"
+                    className="w-full h-10 bg-transparent text-black hover:bg-gray-50 border border-gray-200 [font-family:'Inter',Helvetica] font-medium rounded-none transition-all duration-200 ease-out hover:transform hover:scale-[0.98] active:scale-95 shadow-none"
                     onClick={handleBack}
                   >
                     Back
