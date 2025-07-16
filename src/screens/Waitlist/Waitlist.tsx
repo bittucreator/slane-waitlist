@@ -223,7 +223,7 @@ export const Waitlist = (): JSX.Element => {
                   <p className={`font-normal text-[#00000080] text-[13px] text-center [font-family:'Inter',Helvetica] w-full transition-all duration-300 ease-out ${
                     showSubtext ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-2'
                   }`}>
-                    We'll notify you when Slane is ready
+                    We'll notify you when Slane is live
                   </p>
                 </div>
                 
