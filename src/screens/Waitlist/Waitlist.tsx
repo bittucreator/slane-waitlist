@@ -160,14 +160,14 @@ export const Waitlist = (): JSX.Element => {
 
                 <div className="flex flex-col items-start gap-4 w-full">
                   <Input
-                    className="h-[41px] bg-[#f4f4f4] text-xs text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
+                    className="h-[41px] bg-[#f4f4f4] text-xs text-black placeholder:text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
                     placeholder="your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
 
                   <Input
-                    className="h-[41px] bg-[#f4f4f4] text-xs text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
+                    className="h-[41px] bg-[#f4f4f4] text-xs text-black placeholder:text-[#00000080] [font-family:'Inter',Helvetica] font-normal rounded-none shadow-none border-none"
                     placeholder="and email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
